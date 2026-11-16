@@ -1,0 +1,1306 @@
+/* ==========================================================================
+   PORTFOLIO RENDRA - FULLSTACK DEVELOPER
+   Universitas Perjuangan - S1 Teknik Informatika
+   All classes and IDs use strict 'rendra-' prefix.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (DARK THEME DEFAULT & LIGHT THEME OVERRIDES)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Emerald & Teal Theme Colors */
+    --rendra-color-primary: #10b981;
+    --rendra-color-primary-rgb: 16, 185, 129;
+    --rendra-color-primary-dark: #059669;
+    --rendra-color-primary-light: #34d399;
+    --rendra-color-accent: #06b6d4;
+    --rendra-color-accent-rgb: 6, 182, 212;
+    --rendra-color-glow: rgba(16, 185, 129, 0.25);
+
+    /* Dark Mode Defaults */
+    --rendra-bg-body: #0b0f17;
+    --rendra-bg-surface: #111827;
+    --rendra-bg-surface-elevated: #1f2937;
+    --rendra-bg-card: rgba(17, 24, 39, 0.75);
+    --rendra-border-color: rgba(255, 255, 255, 0.08);
+    --rendra-border-color-hover: rgba(16, 185, 129, 0.4);
+
+    --rendra-text-main: #f3f4f6;
+    --rendra-text-muted: #9ca3af;
+    --rendra-text-faint: #6b7280;
+
+    --rendra-navbar-bg: rgba(11, 15, 23, 0.85);
+    --rendra-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --rendra-shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --rendra-shadow-glow: 0 0 25px rgba(16, 185, 129, 0.2);
+
+    /* Fonts & Radii */
+    --rendra-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --rendra-font-mono: 'JetBrains Mono', monospace;
+    --rendra-radius-sm: 8px;
+    --rendra-radius-md: 14px;
+    --rendra-radius-lg: 20px;
+    --rendra-radius-full: 9999px;
+    --rendra-transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Mode Overrides */
+.rendra-light-mode {
+    --rendra-bg-body: #f8fafc;
+    --rendra-bg-surface: #ffffff;
+    --rendra-bg-surface-elevated: #f1f5f9;
+    --rendra-bg-card: rgba(255, 255, 255, 0.85);
+    --rendra-border-color: rgba(0, 0, 0, 0.08);
+    --rendra-border-color-hover: rgba(16, 185, 129, 0.5);
+
+    --rendra-text-main: #0f172a;
+    --rendra-text-muted: #475569;
+    --rendra-text-faint: #94a3b8;
+
+    --rendra-navbar-bg: rgba(255, 255, 255, 0.85);
+    --rendra-shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --rendra-shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    --rendra-shadow-glow: 0 0 25px rgba(16, 185, 129, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESETS & BASE STYLES
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html.rendra-html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body.rendra-body {
+    font-family: var(--rendra-font-sans);
+    background-color: var(--rendra-bg-body);
+    color: var(--rendra-text-main);
+    line-height: 1.65;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. REUSABLE UTILITIES & HELPERS
+   -------------------------------------------------------------------------- */
+.rendra-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.rendra-section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.rendra-text-gradient {
+    background: linear-gradient(135deg, var(--rendra-color-primary) 0%, var(--rendra-color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rendra-text-highlight {
+    color: var(--rendra-color-primary);
+    font-weight: 600;
+}
+
+.rendra-text-accent {
+    color: var(--rendra-color-primary-light);
+}
+
+.rendra-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Section Header Styles */
+.rendra-section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.rendra-section-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--rendra-color-primary);
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.1);
+    border: 1px solid rgba(var(--rendra-color-primary-rgb), 0.25);
+    border-radius: var(--rendra-radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.rendra-section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--rendra-text-main);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+.rendra-section-subtitle {
+    font-size: 1.05rem;
+    color: var(--rendra-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & BADGES
+   -------------------------------------------------------------------------- */
+.rendra-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--rendra-radius-md);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-btn-primary {
+    background: linear-gradient(135deg, var(--rendra-color-primary) 0%, var(--rendra-color-primary-dark) 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.rendra-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45);
+}
+
+.rendra-btn-secondary {
+    background-color: var(--rendra-bg-surface-elevated);
+    color: var(--rendra-text-main);
+    border: 1px solid var(--rendra-border-color);
+}
+
+.rendra-btn-secondary:hover {
+    border-color: var(--rendra-color-primary);
+    color: var(--rendra-color-primary);
+    transform: translateY(-2px);
+}
+
+.rendra-btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--rendra-color-primary);
+    color: var(--rendra-color-primary);
+}
+
+.rendra-btn-outline:hover {
+    background-color: var(--rendra-color-primary);
+    color: #ffffff;
+}
+
+.rendra-btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.rendra-btn-block {
+    width: 100%;
+}
+
+.rendra-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: var(--rendra-radius-full);
+}
+
+.rendra-badge-glow {
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.12);
+    border: 1px solid rgba(var(--rendra-color-primary-rgb), 0.3);
+    color: var(--rendra-color-primary-light);
+}
+
+.rendra-badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--rendra-color-primary);
+    border-radius: 50%;
+    animation: rendra-pulse 2s infinite;
+}
+
+@keyframes rendra-pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.rendra-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--rendra-navbar-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rendra-border-color);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-navbar {
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.rendra-nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rendra-nav-brand {
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-family: var(--rendra-font-mono);
+    color: var(--rendra-text-main);
+    letter-spacing: -0.02em;
+}
+
+.rendra-brand-accent {
+    color: var(--rendra-color-primary);
+}
+
+.rendra-nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.75rem;
+}
+
+.rendra-nav-link {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--rendra-text-muted);
+    transition: var(--rendra-transition-base);
+    position: relative;
+}
+
+.rendra-nav-link:hover,
+.rendra-nav-link.rendra-active {
+    color: var(--rendra-color-primary);
+}
+
+.rendra-nav-link.rendra-active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--rendra-color-primary);
+    border-radius: var(--rendra-radius-full);
+}
+
+.rendra-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.rendra-theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rendra-radius-md);
+    background-color: var(--rendra-bg-surface-elevated);
+    border: 1px solid var(--rendra-border-color);
+    color: var(--rendra-text-main);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-theme-toggle:hover {
+    border-color: var(--rendra-color-primary);
+    color: var(--rendra-color-primary);
+}
+
+.rendra-icon-sun {
+    display: none;
+}
+
+.rendra-icon-moon {
+    display: block;
+}
+
+.rendra-light-mode .rendra-icon-sun {
+    display: block;
+}
+
+.rendra-light-mode .rendra-icon-moon {
+    display: none;
+}
+
+/* Hamburger Menu */
+.rendra-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: var(--rendra-bg-surface-elevated);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-md);
+    cursor: pointer;
+}
+
+.rendra-hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--rendra-text-main);
+    border-radius: 2px;
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-hamburger.rendra-open .rendra-hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 5px);
+}
+
+.rendra-hamburger.rendra-open .rendra-hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.rendra-hamburger.rendra-open .rendra-hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -5px);
+}
+
+/* Mobile Drawer */
+.rendra-mobile-drawer {
+    display: none;
+    background-color: var(--rendra-bg-surface);
+    border-bottom: 1px solid var(--rendra-border-color);
+    padding: 1.5rem 2rem;
+}
+
+.rendra-mobile-drawer.rendra-open {
+    display: block;
+}
+
+.rendra-drawer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.rendra-drawer-link {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--rendra-text-muted);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-drawer-link:hover {
+    color: var(--rendra-color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION
+   -------------------------------------------------------------------------- */
+.rendra-hero-section {
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+}
+
+.rendra-hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.rendra-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.rendra-hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.rendra-hero-subtitle {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--rendra-text-muted);
+}
+
+.rendra-hero-description {
+    font-size: 1.1rem;
+    color: var(--rendra-text-muted);
+    max-width: 580px;
+    line-height: 1.7;
+}
+
+.rendra-hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.rendra-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rendra-border-color);
+}
+
+.rendra-stat-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.rendra-stat-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--rendra-color-primary);
+    font-family: var(--rendra-font-mono);
+}
+
+.rendra-stat-label {
+    font-size: 0.85rem;
+    color: var(--rendra-text-muted);
+    font-weight: 500;
+}
+
+/* Hero Avatar with Glowing Border */
+.rendra-hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rendra-glow-backdrop {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 75%);
+    filter: blur(40px);
+    z-index: 1;
+}
+
+.rendra-avatar-frame {
+    position: relative;
+    z-index: 2;
+    width: 340px;
+    height: 420px;
+    border-radius: var(--rendra-radius-lg);
+    padding: 6px;
+    background: linear-gradient(135deg, var(--rendra-color-primary) 0%, var(--rendra-color-accent) 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--rendra-shadow-glow);
+}
+
+.rendra-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: calc(var(--rendra-radius-lg) - 4px);
+    background-color: var(--rendra-bg-surface);
+}
+
+/* Floating Badges */
+.rendra-floating-tag {
+    position: absolute;
+    background-color: var(--rendra-bg-surface);
+    border: 1px solid var(--rendra-border-color);
+    padding: 0.65rem 1rem;
+    border-radius: var(--rendra-radius-md);
+    box-shadow: var(--rendra-shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    backdrop-filter: blur(10px);
+    z-index: 3;
+}
+
+.rendra-tag-bottom {
+    bottom: -15px;
+    left: -20px;
+}
+
+.rendra-tag-top {
+    top: 20px;
+    right: -25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--rendra-text-main);
+}
+
+.rendra-tag-badge-green {
+    width: 10px;
+    height: 10px;
+    background-color: var(--rendra-color-primary);
+    border-radius: 50%;
+}
+
+.rendra-tag-icon {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.15);
+    color: var(--rendra-color-primary);
+    border-radius: var(--rendra-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rendra-tag-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.rendra-tag-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+}
+
+.rendra-tag-desc {
+    font-size: 0.75rem;
+    color: var(--rendra-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   7. ABOUT SECTION
+   -------------------------------------------------------------------------- */
+.rendra-about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.rendra-about-card {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-lg);
+    padding: 2.25rem;
+    backdrop-filter: blur(10px);
+}
+
+.rendra-about-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--rendra-text-main);
+}
+
+.rendra-about-text {
+    color: var(--rendra-text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.rendra-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rendra-border-color);
+}
+
+.rendra-info-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.rendra-info-label {
+    color: var(--rendra-text-faint);
+    font-weight: 500;
+}
+
+.rendra-info-val {
+    color: var(--rendra-text-main);
+    font-weight: 600;
+}
+
+.rendra-about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.rendra-pillar-card {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-md);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-pillar-card:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateX(6px);
+}
+
+.rendra-pillar-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.12);
+    border: 1px solid rgba(var(--rendra-color-primary-rgb), 0.25);
+    border-radius: var(--rendra-radius-md);
+    color: var(--rendra-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rendra-pillar-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+    margin-bottom: 0.35rem;
+}
+
+.rendra-pillar-desc {
+    font-size: 0.9rem;
+    color: var(--rendra-text-muted);
+    line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   8. SKILLS SECTION
+   -------------------------------------------------------------------------- */
+.rendra-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+
+.rendra-skill-box {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-skill-box:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--rendra-shadow-lg);
+}
+
+.rendra-skill-header {
+    margin-bottom: 1.5rem;
+}
+
+.rendra-skill-category-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--rendra-color-primary);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.rendra-skill-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+}
+
+.rendra-skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rendra-skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    background-color: var(--rendra-bg-surface-elevated);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--rendra-text-main);
+}
+
+.rendra-skill-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--rendra-color-primary);
+    border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   9. PROJECTS SHOWCASE
+   -------------------------------------------------------------------------- */
+.rendra-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.rendra-card {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: var(--rendra-transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.rendra-card:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateY(-6px);
+    box-shadow: var(--rendra-shadow-lg);
+}
+
+.rendra-project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.rendra-project-type {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--rendra-color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rendra-project-icon-link {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--rendra-radius-sm);
+    background-color: var(--rendra-bg-surface-elevated);
+    border: 1px solid var(--rendra-border-color);
+    color: var(--rendra-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-project-icon-link:hover {
+    color: var(--rendra-color-primary);
+    border-color: var(--rendra-color-primary);
+}
+
+.rendra-project-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+    line-height: 1.35;
+    margin-bottom: 0.85rem;
+}
+
+.rendra-project-desc {
+    font-size: 0.95rem;
+    color: var(--rendra-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.rendra-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.rendra-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--rendra-font-mono);
+    color: var(--rendra-color-primary-light);
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.1);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--rendra-radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   10. EXPERIENCE & TIMELINE
+   -------------------------------------------------------------------------- */
+.rendra-timeline {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+.rendra-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    width: 2px;
+    background-color: var(--rendra-border-color);
+}
+
+.rendra-timeline-item {
+    position: relative;
+    margin-bottom: 2.75rem;
+}
+
+.rendra-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.rendra-timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--rendra-color-primary);
+    box-shadow: 0 0 0 4px rgba(var(--rendra-color-primary-rgb), 0.2);
+}
+
+.rendra-timeline-content {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-md);
+    padding: 1.75rem;
+    backdrop-filter: blur(10px);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-timeline-content:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateX(4px);
+}
+
+.rendra-timeline-date {
+    display: inline-block;
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: var(--rendra-color-primary);
+    font-family: var(--rendra-font-mono);
+    margin-bottom: 0.5rem;
+}
+
+.rendra-timeline-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+    margin-bottom: 0.25rem;
+}
+
+.rendra-timeline-org {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--rendra-color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.rendra-timeline-desc {
+    font-size: 0.95rem;
+    color: var(--rendra-text-muted);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   11. CERTIFICATES & CREDENTIALS
+   -------------------------------------------------------------------------- */
+.rendra-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.rendra-cert-card {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-md);
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-cert-card:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateY(-4px);
+}
+
+.rendra-cert-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgba(var(--rendra-color-accent-rgb), 0.15);
+    color: var(--rendra-color-accent);
+    border-radius: var(--rendra-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rendra-cert-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+    margin-bottom: 0.35rem;
+    line-height: 1.35;
+}
+
+.rendra-cert-issuer {
+    font-size: 0.85rem;
+    color: var(--rendra-text-faint);
+    margin-bottom: 0.65rem;
+}
+
+.rendra-cert-badge {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--rendra-color-primary-light);
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   12. CONTACT SECTION & FORM
+   -------------------------------------------------------------------------- */
+.rendra-contact-wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.rendra-contact-info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rendra-contact-panel-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--rendra-text-main);
+}
+
+.rendra-contact-panel-desc {
+    color: var(--rendra-text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.rendra-contact-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.rendra-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-md);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-contact-card:hover {
+    border-color: var(--rendra-border-color-hover);
+    transform: translateX(4px);
+}
+
+.rendra-contact-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgba(var(--rendra-color-primary-rgb), 0.12);
+    border-radius: var(--rendra-radius-sm);
+    color: var(--rendra-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rendra-contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.rendra-contact-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--rendra-text-faint);
+}
+
+.rendra-contact-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--rendra-text-main);
+}
+
+/* Contact Form */
+.rendra-contact-form-panel {
+    background-color: var(--rendra-bg-card);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-lg);
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.rendra-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rendra-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rendra-form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--rendra-text-main);
+}
+
+.rendra-form-input,
+.rendra-form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background-color: var(--rendra-bg-surface-elevated);
+    border: 1px solid var(--rendra-border-color);
+    border-radius: var(--rendra-radius-sm);
+    color: var(--rendra-text-main);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-form-input:focus,
+.rendra-form-textarea:focus {
+    outline: none;
+    border-color: var(--rendra-color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--rendra-color-primary-rgb), 0.2);
+}
+
+.rendra-form-textarea {
+    resize: vertical;
+}
+
+.rendra-form-alert {
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--rendra-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rendra-form-alert-success {
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   13. FOOTER
+   -------------------------------------------------------------------------- */
+.rendra-footer {
+    background-color: var(--rendra-bg-surface);
+    border-top: 1px solid var(--rendra-border-color);
+    padding: 4rem 0 2.5rem 0;
+}
+
+.rendra-footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.75rem;
+}
+
+.rendra-footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--rendra-font-mono);
+    color: var(--rendra-text-main);
+}
+
+.rendra-footer-tagline {
+    font-size: 0.95rem;
+    color: var(--rendra-text-muted);
+    margin-top: 0.5rem;
+}
+
+.rendra-footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rendra-footer-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--rendra-text-muted);
+    transition: var(--rendra-transition-base);
+}
+
+.rendra-footer-link:hover {
+    color: var(--rendra-color-primary);
+}
+
+.rendra-footer-copy {
+    font-size: 0.85rem;
+    color: var(--rendra-text-faint);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rendra-border-color);
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE DESIGN & MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .rendra-hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .rendra-hero-content {
+        align-items: center;
+    }
+
+    .rendra-hero-title {
+        font-size: 2.75rem;
+    }
+
+    .rendra-about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rendra-contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rendra-nav-menu,
+    .rendra-hide-mobile {
+        display: none;
+    }
+
+    .rendra-hamburger {
+        display: flex;
+    }
+
+    .rendra-hero-section {
+        padding-top: 7.5rem;
+    }
+
+    .rendra-hero-title {
+        font-size: 2.25rem;
+    }
+
+    .rendra-section-title {
+        font-size: 1.85rem;
+    }
+
+    .rendra-avatar-frame {
+        width: 290px;
+        height: 360px;
+    }
+
+    .rendra-tag-bottom {
+        left: 0;
+        bottom: -20px;
+    }
+
+    .rendra-tag-top {
+        right: 0;
+        top: -15px;
+    }
+
+    .rendra-hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .rendra-contact-form-panel {
+        padding: 1.75rem;
+    }
+}

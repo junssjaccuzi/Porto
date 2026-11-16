@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id" class="rendra-html" id="rendra-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Rendra Adie Permana - Fullstack Developer & Mahasiswa S1 Teknik Informatika Universitas Perjuangan">
+    <title>Rendra Adie Permana | Fullstack Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/rendra-style.css">
+</head>
+<body class="rendra-body" id="rendra-top">
+
+    <!-- Header & Navigation -->
+    <header class="rendra-header" id="rendra-main-header">
+        <nav class="rendra-navbar" id="rendra-main-nav">
+            <div class="rendra-nav-container">
+                <a href="#rendra-top" class="rendra-nav-brand">
+                    <span class="rendra-brand-accent">&lt;</span>Rendra<span class="rendra-brand-accent">/&gt;</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <ul class="rendra-nav-menu" id="rendra-nav-links">
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-hero" class="rendra-nav-link rendra-active">Beranda</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-about" class="rendra-nav-link">Tentang</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-skills" class="rendra-nav-link">Keahlian</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-projects" class="rendra-nav-link">Proyek</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-experience" class="rendra-nav-link">Pengalaman</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-certificates" class="rendra-nav-link">Sertifikat</a>
+                    </li>
+                    <li class="rendra-nav-item">
+                        <a href="#rendra-contact" class="rendra-nav-link">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Header Actions (Theme Toggle & Mobile Menu Button) -->
+                <div class="rendra-nav-actions">
+                    <button class="rendra-theme-toggle" id="rendra-btn-theme" type="button" aria-label="Ganti Tema">
+                        <svg class="rendra-icon rendra-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="rendra-icon rendra-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <a href="#rendra-contact" class="rendra-btn rendra-btn-sm rendra-btn-outline rendra-hide-mobile">Hubungi Saya</a>
+                    <button class="rendra-hamburger" id="rendra-btn-hamburger" type="button" aria-label="Buka Menu Navigasi">
+                        <span class="rendra-hamburger-line"></span>
+                        <span class="rendra-hamburger-line"></span>
+                        <span class="rendra-hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer -->
+        <div class="rendra-mobile-drawer" id="rendra-drawer-menu">
+            <ul class="rendra-drawer-list">
+                <li class="rendra-drawer-item"><a href="#rendra-hero" class="rendra-drawer-link">Beranda</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-about" class="rendra-drawer-link">Tentang</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-skills" class="rendra-drawer-link">Keahlian</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-projects" class="rendra-drawer-link">Proyek</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-experience" class="rendra-drawer-link">Pengalaman</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-certificates" class="rendra-drawer-link">Sertifikat</a></li>
+                <li class="rendra-drawer-item"><a href="#rendra-contact" class="rendra-drawer-link">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="rendra-main" id="rendra-main-content">
+        <!-- Hero Section -->
+        <section class="rendra-section rendra-hero-section" id="rendra-hero">
+            <div class="rendra-container rendra-hero-container">
+                <div class="rendra-hero-content">
+                    <div class="rendra-badge rendra-badge-glow">
+                        <span class="rendra-badge-dot"></span>
+                        <span>Siap Mengerjakan Proyek &amp; Kolaborasi</span>
+                    </div>
+                    <h1 class="rendra-hero-title">
+                        Halo, Saya <span class="rendra-text-gradient">Rendra Adie Permana</span>
+                    </h1>
+                    <h2 class="rendra-hero-subtitle">
+                        Fullstack Developer &amp; Mahasiswa Teknik Informatika
+                    </h2>
+                    <p class="rendra-hero-description">
+                        Mahasiswa S1 Teknik Informatika di <strong class="rendra-text-highlight">Universitas Perjuangan</strong>. Berfokus pada pengembangan aplikasi web modern, arsitektur fullstack yang tangguh, antarmuka interaktif, dan solusi digital yang berdampak nyata.
+                    </p>
+                    <div class="rendra-hero-buttons">
+                        <a href="#rendra-projects" class="rendra-btn rendra-btn-primary">
+                            <span>Jelajahi Proyek</span>
+                            <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#rendra-contact" class="rendra-btn rendra-btn-secondary">
+                            <span>Hubungi Saya</span>
+                        </a>
+                    </div>
+                    <div class="rendra-hero-stats">
+                        <div class="rendra-stat-card">
+                            <span class="rendra-stat-number">6+</span>
+                            <span class="rendra-stat-label">Proyek Selesai</span>
+                        </div>
+                        <div class="rendra-stat-card">
+                            <span class="rendra-stat-number">MACHINE LEARNING</span>
+                            <span class="rendra-stat-label">Stack Utama</span>
+                        </div>
+                        <div class="rendra-stat-card">
+                            <span class="rendra-stat-number">UNPER</span>
+                            <span class="rendra-stat-label">Univ. Perjuangan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Profile Image Area -->
+                <div class="rendra-hero-image-wrapper">
+                    <div class="rendra-glow-backdrop"></div>
+                    <div class="rendra-avatar-frame">
+                        <img src="assets/images/rendra-profile.jpg" alt="Foto Profil Rendra Adie Permana - Universitas Perjuangan" class="rendra-avatar-img">
+                        <div class="rendra-floating-tag rendra-tag-bottom">
+                            <div class="rendra-tag-icon">
+                                <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <div class="rendra-tag-text">
+                                <span class="rendra-tag-title">Fullstack Dev</span>
+                                <span class="rendra-tag-desc">Web &amp; API Solutions</span>
+                            </div>
+                        </div>
+                        <div class="rendra-floating-tag rendra-tag-top">
+                            <span class="rendra-tag-badge-green"></span>
+                            <span>Universitas Perjuangan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="rendra-section rendra-about-section" id="rendra-about">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Tentang Saya</span>
+                    <h2 class="rendra-section-title">Dedikasi dalam <span class="rendra-text-gradient">Rekayasa Web</span></h2>
+                    <p class="rendra-section-subtitle">Membangun jembatan antara logika backend yang solid dan pengalaman visual pengguna yang intuitif.</p>
+                </div>
+
+                <div class="rendra-about-grid">
+                    <div class="rendra-about-card rendra-about-bio">
+                        <h3 class="rendra-about-card-title">Profil Akademis &amp; Profesional</h3>
+                        <p class="rendra-about-text">
+                            Saya adalah mahasiswa aktif program studi <strong class="rendra-text-highlight">S1 Teknik Informatika di Universitas Perjuangan</strong> yang memiliki minat mendalam pada pengembangan ekosistem perangkat lunak web fullstack.
+                        </p>
+                        <p class="rendra-about-text">
+                            Berbekal penguasaan konsep struktur data, pemrograman berorientasi objek, perancangan basis data terelasi dan non-relasional, serta arsitektur RESTful API, saya terus berinovasi menghasilkan produk digital yang cepat, aman, dan mudah digunakan.
+                        </p>
+                        <div class="rendra-info-list">
+                            <div class="rendra-info-item">
+                                <span class="rendra-info-label">Pendidikan:</span>
+                                <span class="rendra-info-val">S1 Teknik Informatika, Universitas Perjuangan</span>
+                            </div>
+                            <div class="rendra-info-item">
+                                <span class="rendra-info-label">Spesialisasi:</span>
+                                <span class="rendra-info-val">Fullstack Web Development</span>
+                            </div>
+                            <div class="rendra-info-item">
+                                <span class="rendra-info-label">Lokasi:</span>
+                                <span class="rendra-info-val">Tasikmalaya, Jawa Barat, Indonesia</span>
+                            </div>
+                            <div class="rendra-info-item">
+                                <span class="rendra-info-label">Status:</span>
+                                <span class="rendra-info-val rendra-text-accent">Terbuka untuk Magang &amp; Freelance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rendra-about-pillars">
+                        <div class="rendra-pillar-card">
+                            <div class="rendra-pillar-icon">
+                                <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="rendra-pillar-body">
+                                <h4 class="rendra-pillar-title">Frontend Engineering</h4>
+                                <p class="rendra-pillar-desc">Mengembangkan antarmuka interaktif yang responsif, aksesibel, dan memikat pengguna dengan standar modern.</p>
+                            </div>
+                        </div>
+
+                        <div class="rendra-pillar-card">
+                            <div class="rendra-pillar-icon">
+                                <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <div class="rendra-pillar-body">
+                                <h4 class="rendra-pillar-title">Backend &amp; Database Architecture</h4>
+                                <p class="rendra-pillar-desc">Perancangan API RESTful terstruktur, integrasi autentikasi aman, pemrosesan bisnis efisien, dan optimasi query.</p>
+                            </div>
+                        </div>
+
+                        <div class="rendra-pillar-card">
+                            <div class="rendra-pillar-icon">
+                                <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <div class="rendra-pillar-body">
+                                <h4 class="rendra-pillar-title">Clean Code &amp; Versioning</h4>
+                                <p class="rendra-pillar-desc">Penerapan standar clean code, modularisasi komponen, dan manajemen version control menggunakan Git/GitHub secara teratur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="rendra-section rendra-skills-section" id="rendra-skills">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Tech Stack</span>
+                    <h2 class="rendra-section-title">Keahlian &amp; <span class="rendra-text-gradient">Teknologi</span></h2>
+                    <p class="rendra-section-subtitle">Perangkat lunak, framework, dan teknologi yang saya gunakan sehari-hari dalam membangun aplikasi.</p>
+                </div>
+
+                <div class="rendra-skills-grid">
+                    <!-- Frontend Card -->
+                    <div class="rendra-skill-box">
+                        <div class="rendra-skill-header">
+                            <span class="rendra-skill-category-badge">Client Side</span>
+                            <h3 class="rendra-skill-title">Frontend Development</h3>
+                        </div>
+                        <div class="rendra-skill-items">
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">HTML5 &amp; Semantic Web</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">CSS3 / Flexbox &amp; Grid</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">JavaScript (ES6+)</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">React.js</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Tailwind CSS &amp; Bootstrap</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Responsive Web Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Card -->
+                    <div class="rendra-skill-box">
+                        <div class="rendra-skill-header">
+                            <span class="rendra-skill-category-badge">Server Side</span>
+                            <h3 class="rendra-skill-title">Backend &amp; API</h3>
+                        </div>
+                        <div class="rendra-skill-items">
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Node.js Runtime</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Express.js Framework</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">RESTful API Design</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">JWT Authentication &amp; Bcrypt</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Middleware &amp; Error Handling</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">PHP Fundamental</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Card -->
+                    <div class="rendra-skill-box">
+                        <div class="rendra-skill-header">
+                            <span class="rendra-skill-category-badge">Data Storage</span>
+                            <h3 class="rendra-skill-title">Database Management</h3>
+                        </div>
+                        <div class="rendra-skill-items">
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">MySQL / Relational DB</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">MongoDB (NoSQL) &amp; Mongoose</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Database Normalization</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Query Optimization</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Data Seeding &amp; Migration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Card -->
+                    <div class="rendra-skill-box">
+                        <div class="rendra-skill-header">
+                            <span class="rendra-skill-category-badge">Workflow</span>
+                            <h3 class="rendra-skill-title">Tools &amp; DevOps</h3>
+                        </div>
+                        <div class="rendra-skill-items">
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Git &amp; GitHub Versioning</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Postman API Testing</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">VS Code &amp; Debugger</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Vercel &amp; Render Cloud</span>
+                            </div>
+                            <div class="rendra-skill-pill">
+                                <span class="rendra-skill-dot"></span>
+                                <span class="rendra-skill-name">Figma to Code Flow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="rendra-section rendra-projects-section" id="rendra-projects">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Showcase</span>
+                    <h2 class="rendra-section-title">Koleksi <span class="rendra-text-gradient">Proyek Terpilih</span></h2>
+                    <p class="rendra-section-subtitle">Beberapa aplikasi fullstack dan proyek pengembangan sistem yang telah saya selesaikan.</p>
+                </div>
+
+                <div class="rendra-projects-grid">
+                    <!-- Project 1 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">Fullstack Web App</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">UNPER Campus Event &amp; Community Portal</h3>
+                        <p class="rendra-project-desc">
+                            Platform berbasis web untuk mengelola dan mempublikasikan kegiatan kemahasiswaan, pendaftaran seminar, dan forum diskusi antar mahasiswa Universitas Perjuangan secara real-time.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">React.js</span>
+                            <span class="rendra-tag">Node.js</span>
+                            <span class="rendra-tag">Express</span>
+                            <span class="rendra-tag">MongoDB</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">E-Commerce Platform</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">MERN Store &amp; Order Management</h3>
+                        <p class="rendra-project-desc">
+                            Aplikasi toko online lengkap dengan otentikasi JWT, keranjang belanja interaktif, kalkulasi checkout dinamis, serta dashboard admin untuk manajemen stok produk dan status pesanan.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">MERN Stack</span>
+                            <span class="rendra-tag">JWT</span>
+                            <span class="rendra-tag">REST API</span>
+                            <span class="rendra-tag">CSS Grid</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">Productivity Web Tool</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">TaskFlow - Project Collaboration Board</h3>
+                        <p class="rendra-project-desc">
+                            Aplikasi manajemen tugas bergaya Kanban Board dengan kemampuan drag-and-drop, filter prioritas tugas, penugasan anggota tim, dan pencatatan riwayat aktivitas proyek.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">JavaScript</span>
+                            <span class="rendra-tag">Node.js</span>
+                            <span class="rendra-tag">MySQL</span>
+                            <span class="rendra-tag">Express</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">Backend Service</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">Academic RESTful API Service</h3>
+                        <p class="rendra-project-desc">
+                            Arsitektur backend mikro untuk sistem informasi nilai dan presensi mahasiswa. Dilengkapi dokumentasi API interaktif, rate-limiting, validasi payload, dan hashing password.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">Express.js</span>
+                            <span class="rendra-tag">Postman</span>
+                            <span class="rendra-tag">MySQL</span>
+                            <span class="rendra-tag">Bcrypt</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">Frontend Interactive</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">DevInsight Analytics Dashboard</h3>
+                        <p class="rendra-project-desc">
+                            Dashboard visual interaktif untuk memonitor metrik performa aplikasi web, aktivitas pengunjung, dan grafik tren data dengan responsive charts.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">React</span>
+                            <span class="rendra-tag">Chart.js</span>
+                            <span class="rendra-tag">Tailwind</span>
+                            <span class="rendra-tag">REST API</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="rendra-card rendra-project-card">
+                        <div class="rendra-project-header">
+                            <div class="rendra-project-type">Fullstack Utility</div>
+                            <div class="rendra-project-links">
+                                <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-project-icon-link" aria-label="Lihat Source Code GitHub">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="rendra-project-title">QuickDocs - Markdown Note Platform</h3>
+                        <p class="rendra-project-desc">
+                            Aplikasi pencatatan kode dan dokumentasi teknis dengan live markdown preview, sistem tagar kategori, dan penyimpanan database tersinkronisasi.
+                        </p>
+                        <div class="rendra-project-tags">
+                            <span class="rendra-tag">JavaScript</span>
+                            <span class="rendra-tag">Express</span>
+                            <span class="rendra-tag">MongoDB</span>
+                            <span class="rendra-tag">Markdown</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section class="rendra-section rendra-experience-section" id="rendra-experience">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Rekam Jejak</span>
+                    <h2 class="rendra-section-title">Pengalaman &amp; <span class="rendra-text-gradient">Edukasi</span></h2>
+                    <p class="rendra-section-subtitle">Perjalanan akademik dan keterlibatan organisasi di Universitas Perjuangan.</p>
+                </div>
+
+                <div class="rendra-timeline">
+                    <!-- Timeline Item -->
+                    <div class="rendra-timeline-item">
+                        <div class="rendra-timeline-dot"></div>
+                        <div class="rendra-timeline-content">
+                            <span class="rendra-timeline-date">2024 - Sekarang</span>
+                            <h3 class="rendra-timeline-title">Mahasiswa S1 Teknik Informatika</h3>
+                            <h4 class="rendra-timeline-org">Universitas Perjuangan Tasikmalaya</h4>
+                            <p class="rendra-timeline-desc">
+                                Mempelajari rekayasa perangkat lunak, algoritma dan pemrograman, basis data, jaringan komputer, serta secara konsisten mengeksplorasi pengembangan web modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="rendra-section rendra-certificates-section" id="rendra-certificates">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Kredensial</span>
+                    <h2 class="rendra-section-title">Sertifikasi &amp; <span class="rendra-text-gradient">Penghargaan</span></h2>
+                    <p class="rendra-section-subtitle">Pengakuan dan pembelajaran mandiri yang telah terverifikasi.</p>
+                </div>
+
+                <div class="rendra-cert-grid">
+                    <div class="rendra-cert-card">
+                        <div class="rendra-cert-icon">
+                            <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="rendra-cert-content">
+                            <h3 class="rendra-cert-title">Belajar Dasar Pemrograman Web</h3>
+                            <p class="rendra-cert-issuer">Dicoding Academy • Terverifikasi</p>
+                            <span class="rendra-cert-badge">HTML • CSS • Responsive Layout</span>
+                        </div>
+                    </div>
+
+                    <div class="rendra-cert-card">
+                        <div class="rendra-cert-icon">
+                            <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="rendra-cert-content">
+                            <h3 class="rendra-cert-title">JavaScript Algorithms and Data Structures</h3>
+                            <p class="rendra-cert-issuer">freeCodeCamp • Terverifikasi</p>
+                            <span class="rendra-cert-badge">ES6 • OOP • Algoritma</span>
+                        </div>
+                    </div>
+
+                    <div class="rendra-cert-card">
+                        <div class="rendra-cert-icon">
+                            <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="rendra-cert-content">
+                            <h3 class="rendra-cert-title">Membangun REST API dengan Node.js &amp; Express</h3>
+                            <p class="rendra-cert-issuer">Dicoding Academy • Terverifikasi</p>
+                            <span class="rendra-cert-badge">Backend • Postman • Express</span>
+                        </div>
+                    </div>
+
+                    <div class="rendra-cert-card">
+                        <div class="rendra-cert-icon">
+                            <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="rendra-cert-content">
+                            <h3 class="rendra-cert-title">Git &amp; GitHub untuk Pengembang Perangkat Lunak</h3>
+                            <p class="rendra-cert-issuer">Dicoding Academy • Terverifikasi</p>
+                            <span class="rendra-cert-badge">Version Control • Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="rendra-section rendra-contact-section" id="rendra-contact">
+            <div class="rendra-container">
+                <div class="rendra-section-header">
+                    <span class="rendra-section-badge">Mari Terhubung</span>
+                    <h2 class="rendra-section-title">Hubungi <span class="rendra-text-gradient">Saya</span></h2>
+                    <p class="rendra-section-subtitle">Tertarik untuk berkolaborasi, mendiskusikan peluang kerja/magang, atau memiliki pertanyaan? Jangan ragu untuk mengirim pesan.</p>
+                </div>
+
+                <div class="rendra-contact-wrapper">
+                    <!-- Contact Info Cards -->
+                    <div class="rendra-contact-info-panel">
+                        <h3 class="rendra-contact-panel-title">Informasi Kontak</h3>
+                        <p class="rendra-contact-panel-desc">
+                            Saya selalu terbuka untuk berdiskusi seputar peluang proyek pengembangan web, kolaborasi tim, atau seputar dunia teknologi.
+                        </p>
+
+                        <div class="rendra-contact-cards-list">
+                            <div class="rendra-contact-card">
+                                <div class="rendra-contact-icon">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="rendra-contact-details">
+                                    <span class="rendra-contact-label">Email</span>
+                                    <a href="mailto:junssjaccuzi@gmail.com" class="rendra-contact-val">junssjaccuzi@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="rendra-contact-card">
+                                <div class="rendra-contact-icon">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="rendra-contact-details">
+                                    <span class="rendra-contact-label">Kampus &amp; Lokasi</span>
+                                    <span class="rendra-contact-val">Universitas Perjuangan, Tasikmalaya</span>
+                                </div>
+                            </div>
+
+                            <div class="rendra-contact-card">
+                                <div class="rendra-contact-icon">
+                                    <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </div>
+                                <div class="rendra-contact-details">
+                                    <span class="rendra-contact-label">GitHub</span>
+                                    <a href="https://github.com/junssjaccuzi" target="_blank" rel="noopener noreferrer" class="rendra-contact-val">github.com/junssjaccuzi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="rendra-contact-form-panel">
+                        <form class="rendra-contact-form" id="rendra-form-contact">
+                            <div class="rendra-form-group">
+                                <label for="rendra-input-name" class="rendra-form-label">Nama Lengkap</label>
+                                <input type="text" id="rendra-input-name" name="name" class="rendra-form-input" placeholder="Masukkan nama Anda..." required>
+                            </div>
+                            <div class="rendra-form-group">
+                                <label for="rendra-input-email" class="rendra-form-label">Alamat Email</label>
+                                <input type="email" id="rendra-input-email" name="email" class="rendra-form-input" placeholder="contoh@email.com" required>
+                            </div>
+                            <div class="rendra-form-group">
+                                <label for="rendra-input-subject" class="rendra-form-label">Subjek Pesan</label>
+                                <input type="text" id="rendra-input-subject" name="subject" class="rendra-form-input" placeholder="Contoh: Tawaran Proyek Fullstack Web" required>
+                            </div>
+                            <div class="rendra-form-group">
+                                <label for="rendra-input-message" class="rendra-form-label">Pesan Anda</label>
+                                <textarea id="rendra-input-message" name="message" rows="5" class="rendra-form-textarea" placeholder="Tuliskan pesan atau detail kebutuhan Anda..." required></textarea>
+                            </div>
+                            <button type="submit" class="rendra-btn rendra-btn-primary rendra-btn-block" id="rendra-btn-submit">
+                                <span>Kirim Pesan</span>
+                                <svg class="rendra-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                            <div class="rendra-form-alert" id="rendra-form-status" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="rendra-footer" id="rendra-main-footer">
+        <div class="rendra-container rendra-footer-container">
+            <div class="rendra-footer-brand">
+                <a href="#rendra-top" class="rendra-footer-logo">
+                    <span class="rendra-brand-accent">&lt;</span>Rendra<span class="rendra-brand-accent">/&gt;</span>
+                </a>
+                <p class="rendra-footer-tagline">
+                    Fullstack Developer &bull; Mahasiswa S1 Teknik Informatika Universitas Perjuangan.
+                </p>
+            </div>
+            <div class="rendra-footer-links">
+                <a href="#rendra-hero" class="rendra-footer-link">Beranda</a>
+                <a href="#rendra-about" class="rendra-footer-link">Tentang</a>
+                <a href="#rendra-skills" class="rendra-footer-link">Keahlian</a>
+                <a href="#rendra-projects" class="rendra-footer-link">Proyek</a>
+                <a href="#rendra-contact" class="rendra-footer-link">Kontak</a>
+            </div>
+            <div class="rendra-footer-copy">
+                &copy; 2026 Rendra Adie Permana. Hak Cipta Dilindungi. Dibuat dengan dedikasi di Universitas Perjuangan.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/rendra-script.js"></script>
+</body>
+</html>
